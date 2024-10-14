@@ -101,8 +101,10 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libkrfbprivate.so.5
 %attr(755,root,root) %{_libdir}/libkrfbprivate.so.*.*
 %dir %{_libdir}/qt6/plugins/krfb
+%dir %{_libdir}/qt6/plugins/krfb/events
 %attr(755,root,root) %{_libdir}/qt6/plugins/krfb/events/x11.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/krfb/events/xdp.so
+%dir %{_libdir}/qt6/plugins/krfb/framebuffer
 %attr(755,root,root) %{_libdir}/qt6/plugins/krfb/framebuffer/pw.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/krfb/framebuffer/xcb.so
 %{_desktopdir}/org.kde.krfb.desktop
