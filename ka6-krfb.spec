@@ -50,6 +50,7 @@ BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xz
+Requires(post,postun):	desktop-file-utils
 Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -91,8 +92,13 @@ rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/sr
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post
+/sbin/ldconfig
+%update_desktop_database_post
+
+%postun
+/sbin/ldconfig
+%update_desktop_database_postun
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
