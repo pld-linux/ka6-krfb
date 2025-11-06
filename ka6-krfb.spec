@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		krfb
 Summary:	krfb
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	8af7a0d812325812acd6478df49c0768
+# Source0-md5:	143066afde4ba353161e5e0a39366ebf
 URL:		http://www.kde.org/
 BuildRequires:	Mesa-libgbm-devel
 BuildRequires:	Qt6Core-devel
@@ -106,14 +106,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/krfb
 %attr(755,root,root) %{_bindir}/krfb-virtualmonitor
 %ghost %{_libdir}/libkrfbprivate.so.5
-%attr(755,root,root) %{_libdir}/libkrfbprivate.so.*.*
+%{_libdir}/libkrfbprivate.so.*.*
 %dir %{_libdir}/qt6/plugins/krfb
 %dir %{_libdir}/qt6/plugins/krfb/events
-%attr(755,root,root) %{_libdir}/qt6/plugins/krfb/events/x11.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/krfb/events/xdp.so
+%{_libdir}/qt6/plugins/krfb/events/x11.so
+%{_libdir}/qt6/plugins/krfb/events/xdp.so
 %dir %{_libdir}/qt6/plugins/krfb/framebuffer
-%attr(755,root,root) %{_libdir}/qt6/plugins/krfb/framebuffer/pw.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/krfb/framebuffer/xcb.so
+%{_libdir}/qt6/plugins/krfb/framebuffer/pw.so
+%{_libdir}/qt6/plugins/krfb/framebuffer/xcb.so
 %{_desktopdir}/org.kde.krfb.desktop
 %{_desktopdir}/org.kde.krfb.virtualmonitor.desktop
 %{_iconsdir}/hicolor/48x48/apps/krfb.png
