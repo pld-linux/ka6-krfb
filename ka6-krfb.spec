@@ -2,28 +2,26 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %define		kdeappsver	26.08.0
-%define		kframever	5.94.0
-%define		qtver		5.15.2
+%define		kframever	6.2.0
+%define		qtver		6.5.0
 %define		kaname		krfb
 Summary:	krfb
 Name:		ka6-%{kaname}
 Version:	26.08.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	6d1c2212deb3abf364778672d20077d2
 URL:		http://www.kde.org/
-BuildRequires:	Mesa-libgbm-devel
-BuildRequires:	Qt6Core-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6DBus-devel
-BuildRequires:	Qt6Gui-devel >= 5.11.1
-BuildRequires:	Qt6WaylandClient-devel
-BuildRequires:	Qt6Widgets-devel
-BuildRequires:	gettext-devel
+BuildRequires:	Qt6DBus-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6WaylandClient-devel >= %{qtver}
+BuildRequires:	Qt6Widgets-devel >= %{qtver}
+BuildRequires:	cmake >= 3.16
+BuildRequires:	gettext-tools
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf6-kcompletion-devel >= %{kframever}
 BuildRequires:	kf6-kconfig-devel >= %{kframever}
 BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
 BuildRequires:	kf6-kcrash-devel >= %{kframever}
@@ -32,20 +30,24 @@ BuildRequires:	kf6-kdnssd-devel >= %{kframever}
 BuildRequires:	kf6-kdoctools-devel >= %{kframever}
 BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-knotifications-devel >= %{kframever}
+BuildRequires:	kf6-kstatusnotifieritem-devel >= %{kframever}
 BuildRequires:	kf6-kwallet-devel >= %{kframever}
 BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	kp6-kpipewire-devel
 BuildRequires:	kp6-kwayland-devel >= 5.93
-BuildRequires:	libepoxy-devel
-BuildRequires:	libvncserver-devel
+BuildRequires:	libvncserver-devel >= 0.9.14
 BuildRequires:	libxcb-devel
 BuildRequires:	ninja
-BuildRequires:	pipewire-devel
+BuildRequires:	pipewire-devel >= 0.3
+BuildRequires:	plasma-wayland-protocols-devel >= 1.5.0
 BuildRequires:	qt6-build >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	wayland-devel
+BuildRequires:	xcb-util-image-devel
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXdamage-devel
 BuildRequires:	xorg-lib-libXtst-devel
