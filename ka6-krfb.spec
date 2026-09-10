@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.08.0
+%define		kdeappsver	26.08.1
 %define		kframever	6.2.0
 %define		qtver		6.5.0
 %define		kaname		krfb
 Summary:	krfb
 Name:		ka6-%{kaname}
-Version:	26.08.0
-Release:	2
+Version:	26.08.1
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6d1c2212deb3abf364778672d20077d2
+# Source0-md5:	60f5fca301f7135e49c476d6f8a66aca
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6DBus-devel >= %{qtver}
